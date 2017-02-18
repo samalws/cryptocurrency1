@@ -1,6 +1,15 @@
 import socket
 import _thread
+from CryptoTools import CryptoTools
 
+#ALGORITHMS ETC
+crypto = CryptoTools(100)
+print(str(crypto.privKey))
+print(str(crypto.pubKey))
+print(crypto.sign(100))
+print(crypto.validate(100,crypto.sign(100),crypto.pubKey))
+
+#NETWORKING TIME!
 hostname = socket.gethostname()
 buffersize = 1024
 serverPort = 4411 #digits 1 thru 4 of SHA256("lost the game") in base 10
